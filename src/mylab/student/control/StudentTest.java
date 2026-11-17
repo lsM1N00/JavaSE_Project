@@ -9,16 +9,17 @@ public class StudentTest {
 		try {
 			Student student = new Student("A110", "김민수", "컴퓨터공학과", 3);
 			
-			System.out.println("학번 :" + student.getStudentId());
-			System.out.println("이름 :" + student.getName());
-			System.out.println("전공 :" + student.getMajor());
-			System.out.println("학년 :" + student.getGrade());
+			System.out.print(student.getName() + " / ");
+			System.out.print(student.getMajor() + " / ");
+			System.out.println(student.getGrade());
 			
-			student.setGrade(5);
+			int grade = 5;
+			System.out.println(grade + "학년으로 변경");
+			student.setGrade(grade);
 			
 			
 		} catch (InvalidGradeException e) {
-			System.out.println("Error 메시지= " + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 
 	}

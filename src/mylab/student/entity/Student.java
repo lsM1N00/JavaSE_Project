@@ -50,7 +50,7 @@ public class Student extends Object {
 
 	public void setGrade(int grade) throws InvalidGradeException {
 		if(grade > 4) {
-			throw new InvalidGradeException("학년은 1~4 사이의 값이어애 합니다."); 
+			throw new InvalidGradeException("학년은 1~4 사이의 값이어야 합니다."); 
 		}
 		this.grade = grade;
 	}
