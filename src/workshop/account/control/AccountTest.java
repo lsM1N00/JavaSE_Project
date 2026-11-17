@@ -1,19 +1,32 @@
 package workshop.account.control;
 
 import workshop.account.entity.Account;
+import workshop.account.exception.InsufficientBalanceException;
 
 public class AccountTest {
 
 	public static void main(String[] args) {
-		
-		Account account = new Account();
-		account.setCustId("A1100");
-		account.setacctId("221-22-3477");
-		account.deposit(100000);
-		
-		System.out.println("고객번호 = " + account.getCustId());
-		System.out.println("계좌번호 = " + account.getacctId());
-		System.out.println("잔액 = " + account.getBalance());
+		try {
+			Account account = new Account();
+			account.setCustId("A1100");
+			account.setacctId("221-22-3477");
+			account.deposit(100000);
+			
+			System.out.println("고객번호 = " + account.getCustId());
+			System.out.println("계좌번호 = " + account.getacctId());
+			System.out.println("잔액 = " + account.getBalance());
+			
+			Account account2 = new Account("A1005", "221-22-3488", 100000);
+			account2.withdraw(50000);
+			System.out.println("고객번호 = " + account2.getCustId());
+			System.out.println("계좌번호 = " + account2.getacctId());
+			System.out.println("잔액 = " + account2.getBalance());
+			
+			//toString();
+			System.out.println(account2);
+		} catch (InsufficientBalanceException e) {
+			System.out.println("Error 메시지=" + e.getMessage() + e.getCurrentBalance());
+		}
 	}
 
 }
