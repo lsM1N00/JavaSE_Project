@@ -1,13 +1,11 @@
 package workshop.animal.entity;
 
-public class Fish extends Animal implements pet {
+public class Fish extends Animal implements Pet {
 	private String name;
 	
 	public Fish () {
 		super(0);
 	}
-	
-	
 
 	@Override
 	public String getName() {
