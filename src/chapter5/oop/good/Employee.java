@@ -2,11 +2,16 @@ package chapter5.oop.good;
 
 public class Employee {
 
-	protected String name;
+	private String name;
 	protected double salary;
 
 	public Employee() {
 		super();
+	}
+	
+	public Employee(String name, double salary) {
+		this.name = name;
+		this.salary = salary;
 	}
 
 	public String getName() {
