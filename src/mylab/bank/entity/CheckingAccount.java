@@ -21,7 +21,6 @@ public class CheckingAccount extends Account {
 		return this.withdrawalLimit;
 	}
 	
-	@Override
 	public void withdraw(double balance) throws InsufficientBalanceException {
 		if(this.getBalance() < balance) {
 			throw new InsufficientBalanceException("잔액이 부족합니다. 햔재잔액은 " + this.getBalance());
